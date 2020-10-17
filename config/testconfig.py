@@ -4,8 +4,10 @@ from ui.application_data import ApplicationData
 from api.api_data import ApiData
 
 class TestConfig():
-    driver = webdriver.Chrome(ChromeDriverManager().install())
-    
+
+    def __init__(self):
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+
     def _get_driver(self):
         return self.driver
 
@@ -30,7 +32,7 @@ class TestConfig():
         return api_key
 
     def load_application(self):
-        self._get_driver().get(self._get_application_url())
+        self.driver.get(self._get_application_url())
 
     def close_browser(self):
-        self._get_driver().close()
+        self.driver.close()
