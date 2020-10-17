@@ -20,11 +20,11 @@ class TestConfig():
         return app_data
 
     def _get_apiurl(self):
-        api_url = 'https://openweathermap.org/current'
+        api_url = 'http://api.openweathermap.org/data/2.5/weather?'
         return api_url
 
     def _get_api_data(self):
-        api_data = ApiData(self._get_apiurl())
+        api_data = ApiData(self._get_apiurl(),self._get_api_key())
         return api_data
 
     def _get_api_key(self):
