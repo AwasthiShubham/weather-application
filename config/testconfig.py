@@ -37,3 +37,9 @@ class TestConfig():
 
     def close_browser(self):
         self.driver.close()
+
+    def compare_values(self, api_value, ui_value):
+        api_val = int(float((api_value['main']['temp'])))
+        ui_val = int(ui_value[:-1])
+        diff = abs(api_val-ui_val)
+        return diff
