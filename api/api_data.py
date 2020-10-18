@@ -10,4 +10,4 @@ class ApiData():
         url = self.api_url + "&appid=" + self.api_key + "&q=pune&units=metric"
         response = requests.request("GET",url)
         json_data = json.loads(response.text)
-        return json_data["main"]["temp"]
+        return json_data

@@ -33,6 +33,7 @@ class TestConfig():
 
     def load_application(self):
         self.driver.get(self._get_application_url())
+        self.driver.maximize_window()
 
     def close_browser(self):
         self.driver.close()
